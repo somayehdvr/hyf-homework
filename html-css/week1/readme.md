@@ -1,1 +1,1 @@
-index.html is my CV.
+The file named index.html is my CV.
