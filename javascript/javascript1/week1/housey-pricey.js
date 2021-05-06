@@ -12,6 +12,12 @@ let housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
 
 //result
 console.log(`Peter's house price should be ${housePrice}, and he paid ${paid}`);
+if (housePrice>=paid){
+    console.log(`Peter should purchase the house`)
+}
+else{
+    console.log(`Peter should not purchase the house`)
+}
 
 //Julia case
 width = 5
@@ -26,3 +32,9 @@ housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
 
 //result
 console.log(`Julia's house price should be ${housePrice}, and she paid ${paid}`);
+if (housePrice>=paid){
+    console.log(`Julia should purchase the house`)
+}
+else{
+    console.log(`Julia should not purchase the house`)
+}
