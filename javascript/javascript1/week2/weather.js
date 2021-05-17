@@ -1,5 +1,5 @@
 function weatherWear(temperature){
-    let clothesToWear ={
+    const clothesToWear ={
         "upperbody": ["windbreaker, ","rain jacket, ","jacket, ","warm jacket, ","coat, ","sweater, ","shirt, "],
         "misc": ["umbrella, ","gloves, ","hat, ","warm socks, ","sunglasses, "],
         "lowerbody": ["pants, ","shorts, "],
