@@ -3,12 +3,13 @@ function getFullname (firstname, surname, useFormalName, gender) {
         return "full name is missing";
     }
     else {
-    if (useFormalName && (gender == "F")) {
-        return "Lady "+firstname+ " " + surname;
-    }
-    else if (useFormalName && (gender == "M")) {
-        return "Lord "+firstname+ " " + surname;
-    }
+    if (useFormalName) {
+        if (gender == "F"){
+            return "Lady "+firstname+ " " + surname;
+        }
+        else if (gender == "M")) {
+            return "Lord "+firstname+ " " + surname;
+        }
     else {
         return firstname+ " " + surname;
     }
