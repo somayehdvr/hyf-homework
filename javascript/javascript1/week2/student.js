@@ -5,21 +5,17 @@ function addStudentToClass(studentName) {
         console.log("please enter your name")
         return
     }
-    else{
-        if(class07Students.length < 6 || studentName==("Queen")){
-            if (class07Students.includes(studentName)){
+    else if (class07Students.includes(studentName)){
                 console.log(`Student ${studentName} is already in the class`)
                 return
-            }
-            else{
+    }
+    else if(class07Students.length < 6 || studentName==("Queen")){
                 class07Students.push(studentName)
                 return
-            }
-        }
-        else{
+    }
+    else{
             console.log("Cannot add more students to class 07")
             return
-        }
     }
 }
 
