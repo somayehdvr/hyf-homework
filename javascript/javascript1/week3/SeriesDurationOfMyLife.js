@@ -21,19 +21,19 @@ const seriesDurations = [
 
   function logOutSeriesText() {
     // write code here
-    const lifeSpan = 80 * 365 * 24 * 60
+    const lifeSpanInSeconds = 80 * 365 * 24 * 60
     let totalSeriesTime = 0
 
     for(let i = 0; i < seriesDurations.length; i++){
-      let percentage = (seriesDurations[i].days * 24 * 60) + (seriesDurations[i].hours * 60) + seriesDurations[i].minutes
-      percentage = (percentage * 100) / lifeSpan
-      console.log(seriesDurations[i].title + " took " + percentage.toFixed(4) + " of my life/n")
+      const { title, days, hours, minutes } = seriesDurations[i];
+      let percentage = (days * 24 * 60) + (hours * 60) + minutes;
+      percentage = (percentage * 100) / lifeSpanInSeconds
+      console.log(title + " took " + percentage.toFixed(4) + " of my life/n")
       totalSeriesTime += percentage.toFixed(4)
     }
 
     console.log(`In total that is ${totalSeriesTime}% of my life`)
     
-    return
   }
   
   logOutSeriesText(); /* logs out:
