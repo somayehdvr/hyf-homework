@@ -1,10 +1,10 @@
 //Save a note
 //+++++++++++++++++++++++++++++++++++++++++++
-let notes = [];
+const notes = [];
 
 function saveNote(content, id) {
   // write some code here
-  notes.push({content: content, id: id})
+  notes.push({ content, id })
 }
 
 saveNote("Pick up groceries", 1);
@@ -23,14 +23,14 @@ function getNote(id) {
     }
   }
   
-  let firstNote = getNote(1);
-  console.log(firstNote); // {content: 'Pick up groceries', id: 1}
+const firstNote = getNote(1);
+console.log(firstNote); // {content: 'Pick up groceries', id: 1}
   
 //Log out notes
 //+++++++++++++++++++++++++++++++++++++++++++
 function logOutNotesFormatted() {
     // your code here
-    for (let i=0; i<notes.length; i++){
+    for (let i = 0; i < notes.length; i++){
         console.log(`The note with id: ${notes[i].id}, has the following note text: ${notes[i].content}`)        
     }
     return
