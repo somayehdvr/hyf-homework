@@ -20,7 +20,6 @@ const seriesDurations = [
   ];
 
   function logOutSeriesText() {
-    // write code here
     const lifeSpanInSeconds = 80 * 365 * 24 * 60
     let totalSeriesTime = 0
 
