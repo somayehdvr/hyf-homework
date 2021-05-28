@@ -1,16 +1,24 @@
-function TimeCalculator(travelInformation){
+function calculateTime(travelInformation){
 
 //  calculate time in seconds    
-const timeInSec = ((travelInformation.destinationDistance) / (travelInformation.speed))* 3600;
+const timeInSeconds = ((travelInformation.destinationDistance) / (travelInformation.speed))* 3600;
 
 //  convert to hours, minutes, seconds    
-var h = Math.floor(timeInSec / 3600);
-var m = Math.floor(timeInSec % 3600 / 60);
-//var s = Math.floor(timeInSec % 3600 % 60); for more precise result
+let hours = Math.floor(timeInSeconds / 3600);
+let minutes = Math.floor(timeInSeconds % 3600 / 60);
+//let s = Math.floor(timeInSeconds % 3600 % 60); for more precise result
 
-var hDisplay = h > 0 ? h + (h == 1 ? " hour " : " hours ") : "";
-var mDisplay = m > 0 ? m + (m == 1 ? " minute " : " minutes ") : "";
-//var sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : ""; for more precise result
+let formattedHours = "";
+if(hours > 0) {
+  const hoursWord = hours > 1 ? "hours" : "hour";
+  formattedHours = `${hours} ${hoursWord}`;
+}
+
+let formattedMinutes = "";
+if(minutes > 0) {
+  const minutesWord = minutes > 1 ? "minutes" : "minute";
+  formattedMinutes = `${minutes} ${minutesWord}`;
+}
 
 return hDisplay + " and " + mDisplay //+ " and " + sDisplay; for more precise result
 }
@@ -20,5 +28,5 @@ const travelInformation = {
     destinationDistance: 432,
   };
   
-const travelTime = TimeCalculator(travelInformation);
+const travelTime = calculateTime(travelInformation);
 console.log(travelTime); // 4 hours and 42 minutes
