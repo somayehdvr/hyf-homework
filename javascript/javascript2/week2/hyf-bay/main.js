@@ -7,16 +7,18 @@ console.log(productsUl);
 const main = document.querySelector('main');
 const name = document.getElementById('name');
     
-function updateValue(event) {
+function filterByValue(event) {
     productsUl.innerHTML = ''
-    return renderProducts(products.filter(product => product.name.toLowerCase().includes(event.target.value.toLowerCase())))
+    const eventValue = event.target.value.toLowerCase();
+    const filteredProducts = products.filter(product => product.name.toLowerCase().includes(eventValue));
+    return renderProducts(filteredProducts)
 }
 
 const price = document.getElementById('price');
 
-function updatePrice(event) {
+function filterByPrice(event) {
     productsUl.innerHTML = ''
-    return renderProducts(products.filter(product => product.price < (event.target.value)))
+    return renderProducts(products.filter(product => product.price < parseInt(event.target.value)))
 }
 
 function renderProducts(products) {
@@ -35,5 +37,5 @@ function renderProducts(products) {
 }
 
 renderProducts(products);
-name.addEventListener('input', updateValue);
-price.addEventListener('input', updatePrice);
+name.addEventListener('input', filterByValue);
+price.addEventListener('input', filterByPrice);
