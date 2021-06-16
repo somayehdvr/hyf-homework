@@ -2,7 +2,7 @@
 const shortTitleMovies = movies.filter (movie => movie.title.length < 3)
 
 //Create an array of movie titles with long movie titles
-const longTitles = movies.filter (movie => movie.title.length > 50).map (title => title.title)
+const longTitles = movies.filter(({title}) => title.length > 50).map (({title}) => title)
 
 //Count the number of movies made between 1980-1989 (including both the years)
 const moviesCount = movies.filter (movie => (movie.year >= 1980 && movie.year <= 1989)).length
