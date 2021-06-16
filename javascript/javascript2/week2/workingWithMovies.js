@@ -9,7 +9,15 @@ const moviesCount = movies.filter (movie => (movie.year >= 1980 && movie.year <=
 
 //Create a new array that has an extra key called tag.
 const moviesWithTag = movies
-moviesWithTag.forEach (movie => (movie.tag = movie.rating >= 7 ? "Good" : (movie.rating >= 4 ? "Average" : "Bad")))
+moviesWithTag.forEach(movie => {
+  if(movie.rating >= 7) {
+    movie.tag = "Good"
+  } else if(movie.rating >= 4) {
+    movie.tag = "Average"
+  } else {
+    movie.tag = "Bad"
+  }
+})
 
 //Using chaining, 
 //first filter the movies array to only contain the movies rated higher than 6. 
