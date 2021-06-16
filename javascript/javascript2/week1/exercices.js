@@ -1,12 +1,12 @@
 //Favorite dishes
 /////////////////////////////////////////////////
 const favoriteDishes = ["pizza", "Ghorme", "gheime"]
-let ul = document.createElement('ul');
-let body = document.querySelector('body');
+const ul = document.createElement('ul');
+const body = document.querySelector('body');
 body.appendChild(ul)
 
 for (let i = 0; i < favoriteDishes.length; i++){
-    let li = document.createElement('li');
+    const li = document.createElement('li');
     li.innerHTML = favoriteDishes[i];
     ul.appendChild(li)
 }
@@ -34,13 +34,13 @@ ul = document.createElement('ul');
 body.appendChild(ul)
 
 for (let i = 0; i < podcasts.length; i++){
-    let li = document.createElement('li');
+    const li = document.createElement('li');
     h1 = document.createElement('h1');
     h1.innerHTML = podcasts[i].name;
     li.appendChild(h1);
 
     if (podcasts[i].imageUrl){
-        let image = document.createElement('img');
+        const image = document.createElement('img');
         image.src = podcasts[i].imageUrl;
         li.appendChild(image);
     }
@@ -51,7 +51,7 @@ for (let i = 0; i < podcasts.length; i++){
 //Image inserter
 /////////////////////////////////////////////////
 function insertImage(imageUrl, elementToAppendImageTo){
-    let image = document.createElement('img');
+    const image = document.createElement('img');
     image.src = imageUrl;
     elementToAppendImageTo.appendChild(image);
 }
@@ -60,17 +60,17 @@ insertImage('https://picsum.photos/536/354', document.querySelector('body'));
 
 //Simple eventlistener
 /////////////////////////////////////////////////
-let button = document.querySelector(".btn-class1")
+const button = document.querySelector(".btn-class1")
 
-function myFunction () {
+function changeButtonLabel () {
     button.innerHTML = "button clicked"
 }
 
-button.addEventListener("click", myFunction)
+button.addEventListener("click", changeButtonLabel)
 
 //Light mode dark mode
 /////////////////////////////////////////////////
-let button2 = document.querySelector(".btn-class2")
+const button2 = document.querySelector(".btn-class2")
 
 function myFunction2 () {
     if (button2.innerHTML === "change color"){
