@@ -16,7 +16,7 @@ const button = document.querySelector(".submit");
 button.innerHTML = "submit";
 
 
-function myFunction() {
+function generateSpiritName() {
     const name= document.getElementsByClassName("name")[0].value;
 
     if(name){
@@ -28,4 +28,4 @@ function myFunction() {
     }
 }
 
-button.addEventListener("click", myFunction);
+button.addEventListener("click", generateSpiritName);
