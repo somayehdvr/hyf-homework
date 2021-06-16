@@ -5,13 +5,13 @@ function getReply(command){
     // lowercase command and split it into commandWords array
    const commandWords = command.toLowerCase().split(" ");
    let response = null;
-   let toDoText = "";
 
-   if (name !== "" && commandWords[0] == "hello"){
+   if (name && commandWords[0] == "hello"){
     console.log("you've already introduced yourself") 
     return 
    }
 
+   let toDoText = "";
    switch(commandWords[0]) {
       case "hello":
         name = commandWords.pop();
@@ -52,14 +52,19 @@ function getReply(command){
         for (let i = 1; i < commandWords.length - 3; i++){
           toDoText += commandWords[i] + " ";
         }
-        toDoList.pop(toDoText);
+        toDoList.splice(-1, 1);
         response = "Removed " + toDoText + " from your todo"; break;
 
       case "bye":
         response = "Good Bye! "; break;
 
       case "set":
-         setTimeout(function(){ console.log("Timer done"); }, parseInt(commandWords[4])*60000);
+         const timeInMilliseconds = parseInt(commandWords[4]) * 60000;
+         setTimeout(function(){ 
+            console.log("Timer done"); 
+            }
+            , timeInMilliseconds
+         );
          response = `Timer set for ${commandWords[4]} minutes`; break;
       default:
         response = "nothing to add"; break;
