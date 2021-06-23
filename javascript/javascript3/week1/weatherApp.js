@@ -5,7 +5,8 @@ function printWeather() {
     //loading 
     weather.innerHTML = "loading..."
     
-    const city = document.querySelector(".city").value
+    let city = document.querySelector(".city").value
+    if (!city) {city = "copenhagen"}
 
     // Fetch weather json data
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=85bf3bafaf784a301c66129107680db7`)
