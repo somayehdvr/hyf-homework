@@ -1,0 +1,24 @@
+{
+    "foods" :
+    [
+        {
+            "name": "pizza",
+            "id": 1,
+            "Price": {
+                "currency": "dkk",
+                "amount": 100
+            },
+            "category": "fast food"
+        },
+        {
+            "name": "pita brod",
+            "id": 2,
+            "Price": {
+                "currency": "dkk",
+                "amount": 25
+            },
+            "category": "fast food"
+        }
+    ]
+
+}

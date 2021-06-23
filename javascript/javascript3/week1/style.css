@@ -1,0 +1,6 @@
+.giphy {
+    max-width: 250px;
+    display:block;
+    max-height: 300px;
+    overflow: auto;
+}
