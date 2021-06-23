@@ -7,7 +7,6 @@ function printWeather() {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=85bf3bafaf784a301c66129107680db7`)
         .then(response => response.json())
         .then(weatherData => {
-            console.log(weatherData);
             const weather = document.querySelector(".weather")
             weather.innerHTML = `city: ${city} , <br /> 
             temperature: ${weatherData.main.temp} F ${weatherData.weather[0].description}, <br /> 
