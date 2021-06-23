@@ -7,7 +7,7 @@ function printWeather() {
     let limit = document.querySelector(".limit").value
     if (!limit) {limit = 5}
 
-    // Fetch weather json data
+    // Fetch giphy json data
     fetch(`https://api.giphy.com/v1/gifs/search?api_key=KV1LXsbBYQmH1VEYZqM65HZdwRt9U0fT&q=${word}&limit=${limit}&offset=0&rating=g&lang=en`)
         .then(response => response.json())
         .then(giphyData => {
