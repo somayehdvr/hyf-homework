@@ -11,7 +11,6 @@ function printWeather() {
     fetch(`https://api.giphy.com/v1/gifs/search?api_key=KV1LXsbBYQmH1VEYZqM65HZdwRt9U0fT&q=${word}&limit=${limit}&offset=0&rating=g&lang=en`)
         .then(response => response.json())
         .then(giphyData => {
-            console.log(giphyData);
             const giphy = document.querySelector(".giphy")
             for (let i = 0; i < limit; i++) {
                 giphy.innerHTML += `<img src="${giphyData.data[i].images.fixed_width.url}"> <br />`
