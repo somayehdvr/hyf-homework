@@ -1,6 +1,6 @@
-document.querySelector(".submitWord").addEventListener("click", () => printWeather())
+document.querySelector(".submitWord").addEventListener("click", () => printGiphy())
 
-function printWeather() {
+function printGiphy() {
     let word = document.querySelector(".word").value
     if (!word) {word = "cat"}
     
