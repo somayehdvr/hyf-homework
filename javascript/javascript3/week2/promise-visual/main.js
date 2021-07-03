@@ -1,0 +1,7 @@
+function translateOneByOne() {
+    
+}
+
+function translateAllAtOnce() {
+    
+}
