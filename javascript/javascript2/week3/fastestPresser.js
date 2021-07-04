@@ -9,7 +9,7 @@ let gameTime
 
 button.addEventListener('click', getGameTime)
 
-function getGameTime() {
+function startGame() {
     gameTime = input.value
     setTimeout(() => { 
         showWinner(sCount.innerHTML, lCount.innerHTML)
