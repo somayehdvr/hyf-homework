@@ -33,10 +33,13 @@ function getRandomColor() {
 
 function timeout() {
     setTimeout(() => {
-        let c2 = new Circle(Math.random() * 100, Math.random() * 100, Math.random() * 100, 0, 2 * Math.PI, getRandomColor());
+        const c2 = new Circle(Math.random() * 100, Math.random() * 100, Math.random() * 100, 0, 2 * Math.PI, getRandomColor());
         c2.draw(); 
         timeout()
     }, 100)
 }
 
 timeout()
+
+const c3 = new Circle(screen.width, screen.height, 20, 0, 2 * Math.PI, "#000000");
+c3.draw();
