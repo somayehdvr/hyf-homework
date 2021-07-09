@@ -22,12 +22,21 @@ class Circle {
 const c1 = new Circle(50, 50, 20, 0, 2 * Math.PI, "#000000");
 c1.draw();
 
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
 function timeout() {
     setTimeout(() => {
-        let c2 = new Circle(Math.random() * 100, Math.random() * 100, Math.random() * 100, 0, 2 * Math.PI, "#000000");
+        let c2 = new Circle(Math.random() * 100, Math.random() * 100, Math.random() * 100, 0, 2 * Math.PI, getRandomColor());
         c2.draw(); 
         timeout()
-    }, 1000)
+    }, 100)
 }
 
 timeout()
