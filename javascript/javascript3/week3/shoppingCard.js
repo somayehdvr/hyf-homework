@@ -3,6 +3,15 @@ class Product {
       this.name = name;
       this.price = price;
     }
+
+    convertToCurrency(currency) {
+        switch (currency){
+            case "dollars": return this.price *= 0,16; break;
+            case "euro": return this.price *= 0,13; break;
+            case "pound": return this.price *= 0,11; break;
+        }
+    }
+
   }
   
   class ShoppingCart {
@@ -28,7 +37,7 @@ class Product {
     getTotal() {
       // get the total price of the products in the shoppingcart
       let total = 0;
-      total += this.products.forEach(product => {return product.price})
+      this.products.forEach(product => { total += product.price})
       return total;
     }
   
@@ -46,10 +55,10 @@ class Product {
       })
     }
 
-    convertToCurrency(currency) {
-        
-    }
   }
+
+
+
   
   const shoppingCart = new ShoppingCart();
   const flatscreen = new Product("flat-screen", 5000);
@@ -58,8 +67,12 @@ class Product {
   shoppingCart.addProduct(flatscreen2);
   shoppingCart.renderProducts();
 
-  //shoppingCart.removeProduct(flatscreen);
-  //shoppingCart.renderProducts();
+  shoppingCart.removeProduct(flatscreen);
+  shoppingCart.renderProducts();
   console.log(shoppingCart.searchProduct('flat-screen2'))
   console.log(shoppingCart.getTotal())
   console.log(shoppingCart.getUser())
+
+  // Assuming dkk as default currency
+  const plant = new Product("plant", 50);
+  console.log(plant.convertToCurrency("dollars"));
