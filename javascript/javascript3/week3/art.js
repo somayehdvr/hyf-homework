@@ -12,7 +12,7 @@ class Circle {
         const ctx = canvas.getContext("2d");
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.r, this.startAngle, this.endAngle);
-        ctx.fillstyle = this.fillColor;
+        ctx.fillStyle = this.fillColor;
         ctx.fill();
     }
 }
