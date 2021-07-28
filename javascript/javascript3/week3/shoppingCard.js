@@ -6,9 +6,9 @@ class Product {
 
     convertToCurrency(currency) {
         switch (currency){
-            case "dollars": return this.price *= 0,16; break;
-            case "euro": return this.price *= 0,13; break;
-            case "pound": return this.price *= 0,11; break;
+            case "dollars": return this.price *= 0.16; break;
+            case "euro": return this.price *= 0.13; break;
+            case "pound": return this.price *= 0.11; break;
         }
     }
 
