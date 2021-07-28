@@ -12,6 +12,7 @@ function printGiphy() {
         .then(response => response.json())
         .then(giphyData => {
             const giphy = document.querySelector(".giphy")
+            giphy.innerHTML = ``
             for (let i = 0; i < limit; i++) {
                 giphy.innerHTML += `<img src="${giphyData.data[i].images.fixed_width.url}"> <br />`
             }
