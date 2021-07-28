@@ -1,6 +1,6 @@
-document.querySelector(".submitCity").addEventListener("click", () => printWeather())
+document.querySelector(".submitCity").addEventListener("click", () => fetchAndPrintWeather())
 
-function printWeather() {
+function fetchAndPrintWeather() {
     const weather = document.querySelector(".weather")
     //loading 
     weather.innerHTML = "loading..."
