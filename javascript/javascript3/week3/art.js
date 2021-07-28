@@ -8,8 +8,8 @@ class Circle {
         this.fillColor = fillColor;
     }
     draw(){
-        var canvas = document.querySelector("canvas");
-        var ctx = canvas.getContext("2d");
+        const canvas = document.querySelector("canvas");
+        const ctx = canvas.getContext("2d");
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.r, this.startAngle, this.endAngle);
         ctx.fillstyle = this.fillColor;
@@ -23,9 +23,9 @@ const c1 = new Circle(50, 50, 20, 0, 2 * Math.PI, "#000000");
 c1.draw();
 
 function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
