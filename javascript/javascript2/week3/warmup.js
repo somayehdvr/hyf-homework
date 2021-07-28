@@ -26,16 +26,8 @@ const saturnLogger = () => {
     console.log('Saturn')
 }
 
-function planetLogFunction(parameter) {
-    if (parameter === earthLogger){
-        earthLogger()
-    }
-    else if (parameter === saturnLogger) {
-        saturnLogger()
-    }
-    else {
-        console.log('please enter a valid parameter')
-    }
+function planetLogFunction(planetLogger) {
+    planetLogger();
 }
 
 planetLogFunction(earthLogger)
