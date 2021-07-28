@@ -1,0 +1,15 @@
+.form {
+    text-align: center;
+}
+.left {
+    width: 50%;
+    padding: 10rem 0;
+    float: left;
+    text-align: center;
+}
+.right {
+    width: 40%;
+    padding: 10rem 0;
+    float: right;
+    text-align: center;
+}
