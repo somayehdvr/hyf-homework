@@ -25,10 +25,8 @@ returnPromise(8).then(() => {
 ////////////////////////////////////////////
 async function getPromise() {
     try {
-        const asyncResponse = await returnPromise(8).then(() => {
-            console.log("I am called asynchronously"); // logged out after 8 seconds
-        });
-        return asyncResponse;
+        await returnPromise(8)
+        console.log("I am called asynchronously"); // logged out after 8 seconds
     } catch(error) {
         throw "async resolve went wrong";
     }
