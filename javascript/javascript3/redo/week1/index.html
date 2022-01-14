@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <header>
+        <title>HW JS3 W1</title>
+    </header>
+</head>
+
+<body>
+
+    <h1> Weather API </h1>
+    <label for="city">Please Write Your City To Get Its Weather:</label> <br />
+    <input class="city" type="text" placeholder="City Name">
+    <button class="submitCityButton">Submit the City</button>
+    <div class="weatherDataDiv"></div>
+
+    <h1> Giphy API </h1>
+    <label for="gifWord">Please Write Your Chosen Word To Get Its Gif:</label> <br />
+    <input class="gifWord" type="text" placeholder="Gif Word Here">
+    <button class="submitGifWordButton">Submit the Gif Word</button> <br /><br />
+    <input class="limitGifNumber" type="number" placeholder="limit the Gif Numbers">
+    <div class="gifDataDiv"></div>
+
+    <h1> A Cool API </h1>
+    <h2>Movies API</h2>
+    <p>
+        This API can be find in the link: "https://developers.themoviedb.org/3/getting-started/introduction". <br />
+        It is a JSON data API which gives list of movies and their reviews which we can analyse <br />
+        the movies comments and reviews with natural language processing and give a list of recommended movies based on
+        them. <br />
+        This API is an array of objects which includes title, id, release_date, overview, ... which can be used for
+        processing. <br />
+        We can access to this API by a key which their website gives us.
+    </p>
+</body>
+<script src="weatherApp.js"></script>
+<script src="giphyApi.js"></script>
+
+</html>
