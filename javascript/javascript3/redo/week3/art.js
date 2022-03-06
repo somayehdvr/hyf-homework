@@ -17,7 +17,7 @@ class Circle{
         this.endAngle = endAngle;
         this.fillColor = fillColor;
     }
-    draw() {
+    draw(ctx) {
         ctx.beginPath()
         ctx.arc(this.x, this.y, this.r, this.startAngle, this.endAngle)
         ctx.stroke()
@@ -27,7 +27,7 @@ class Circle{
 }
 
 const c1 = new Circle(50, 50, 20, 0, 2 * Math.PI, "#000000");
-c1.draw();
+c1.draw(ctx);
 
 function getRandomColor() {
     const letters = '0123456789ABCDEF';
@@ -42,7 +42,7 @@ let numberOfCircles = 50
 function circleDrawer(number) {
     setTimeout(() => {
         const circles = new Circle(Math.random() * screen.width, Math.random() * screen.height, Math.random() * 100, 0, 2 * Math.PI, getRandomColor());
-        circles.draw(); 
+        circles.draw(ctx); 
         if (numberOfCircles > 0) {
             circleDrawer()
             numberOfCircles--
