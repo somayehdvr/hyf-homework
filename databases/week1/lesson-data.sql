@@ -1,3 +1,4 @@
+USE hyf_lesson1;
 SET NAMES utf8mb4;
 
 CREATE TABLE `user` (
