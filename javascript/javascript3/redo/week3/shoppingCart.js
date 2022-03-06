@@ -30,13 +30,7 @@ class ShoppingCart {
   }
 
   searchProduct(productName) {
-    const productArray = []
-    this.products.forEach(product => {
-      if (product.name === productName) {
-        productArray.push(product)
-      }
-    });
-    return productArray
+    return this.products.filter(products => {if(productName === products.name) return products})
   }
 
   getTotal() {
