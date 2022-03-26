@@ -12,7 +12,7 @@ new Promise(resolve =>
 ////////////////////////////////////////////////
 async function yesNo() {
     try {
-            await setTimeout(async () => {
+            setTimeout(async () => {
             const result = await fetch('https://yesno.wtf/api')
             const data = await result.json()
                 console.log(data.answer)
