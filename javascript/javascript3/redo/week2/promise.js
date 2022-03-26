@@ -1,8 +1,7 @@
 function resolveAfterTime(resolveAfter) {
-    return new Promise((resolve) => setTimeout(() => {
+    return new Promise(setTimeout((resolve) => {
         resolve()
     }, resolveAfter * 1000)
-    )
 }
 
 resolveAfterTime(8).then(() => {
