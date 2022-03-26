@@ -1,0 +1,13 @@
+{   
+    "flowers" :
+    [
+        {
+            "name" : "mikhak",
+            "color" : ["red", "blue", "yellow", "white"]
+        },
+        {
+            "name" : "rose",
+            "color" : ["red", "blue", "yellow", "white", "pink"]
+        }
+    ]
+}
