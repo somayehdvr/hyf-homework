@@ -8,6 +8,7 @@ function fetchGifAndShow() {
 
     let limitGifNumber = document.querySelector('.limitGifNumber').value
     if (!limitGifNumber) { limitGifNumber = 3 }
+    if (limitGifNumber > 50) {limitGifNumber = 50}
 
     fetch(`https://api.giphy.com/v1/gifs/search?api_key=KV1LXsbBYQmH1VEYZqM65HZdwRt9U0fT&q=${gifWord}&limit=${limitGifNumber}&offset=0&rating=g&lang=en`)
         .then(response => response.json())
