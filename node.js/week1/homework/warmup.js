@@ -6,15 +6,12 @@ class Circle{
     }
     getDiameter() {
         console.log(2 * this.radius);
-        return
     }
     getCircumference() {
         console.log(2 * Math.PI * this.radius);
-        return
     }
     getArea() {
         console.log(Math.PI * this.radius * this.radius);
-        return
     }
 }
 
