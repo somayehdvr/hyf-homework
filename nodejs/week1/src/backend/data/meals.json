@@ -1,0 +1,18 @@
+[
+    {
+        "id" : 1,
+        "title" : "Indian food in the summer",
+        "maxNumberOfGuests" : 5,
+        "description" : "A nice night out eating delicious Indian food",
+        "createdAt" : "2019/12/7 14:34",
+        "price" : 67
+    },
+    {
+        "id" : 2,
+        "title" : "Iranian Ghormeh Sabzi Dish",
+        "maxNumberOfGuests" : 3,
+        "description" : "A nice lunch in eating delicious Iranian food",
+        "createdAt" : "2022/03/29 20:10",
+        "price" : 100
+    }
+]
