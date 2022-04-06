@@ -26,7 +26,7 @@ CREATE Table `Reservation`(
  `contact_name` varchar(255),
  `contact_email` varchar(255),
  PRIMARY KEY (`id`),
- CONSTRAINT `fk_meal` FOREIGN KEY (`meal_id`) REFERENCES `meal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+ CONSTRAINT `fk_meal` FOREIGN KEY (`meal_id`) REFERENCES `Meal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE Table `Review`(
@@ -37,7 +37,7 @@ CREATE Table `Review`(
  `stars` int(10),
  `created_date` date,
  PRIMARY KEY (`id`),
- CONSTRAINT `fk_mealId` FOREIGN KEY (`meal_id`) REFERENCES `meal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+ CONSTRAINT `fk_mealId` FOREIGN KEY (`meal_id`) REFERENCES `Meal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 --Queries
@@ -175,14 +175,14 @@ WHERE
 
 -- Get meals that still has available reservations
 SELECT
-    sums.reserved, meal.*
+    sums.reserved, Meal.*
 FROM
-    meal
+    Meal
     JOIN (SELECT SUM(number_of_guests) as reserved, meal_id
           FROM `Reservation`
-          GROUP BY meal_id) as sums ON meal.id = sums.meal_id
+          GROUP BY meal_id) as sums ON Meal.id = sums.meal_id
 WHERE
-    meal.max_reservations < sums.reserved;
+    Meal.max_reservations < sums.reserved;
 
 -- Get meals that partially match a title. Rød grød med will match the meal with the title Rød grød med fløde
 SELECT 
@@ -190,7 +190,7 @@ SELECT
 FROM
     `Meal`
 WHERE
-    meal.title LIKE '%iz%';
+    Meal.title LIKE '%iz%';
 
 -- Get meals that has been created between two dates
 SELECT 
