@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 const meals = require("./../data/meals.json");
+let tempMeals = meals
 
 router.get("/", async (request, response) => {
   try {
@@ -16,29 +17,31 @@ router.get("/", async (request, response) => {
         response.json({ "message": "bad input" });
         return;
       } else {
-        response.send(meals.filter(meal => meal.price <= maxPrice))
+        tempMeals.filter(meal => meal.price <= maxPrice)
       }
-    } else if (title) {
-      response.send(meals.filter(meal => meal.title.includes(title)))
-    } else if (createdAfter) {
+    }
+    if (title) {
+      tempMeals.filter(meal => (meal.title).toLowerCase().includes(title.toLowerCase()))
+    }
+    if (createdAfter) {
       if (!Date.parse(createdAfter)) {
         response.statusCode = 400;
         response.json({ "message": "bad input" });
         return;
       } else {
-        response.send(meals.filter(meal => Date.parse(meal.createdAt) >= Date.parse(createdAfter)))
+        tempMeals.filter(meal => Date.parse(meal.createdAt) >= Date.parse(createdAfter))
       }
-    } else if (limit) {
+    }
+    if (limit) {
       if (!Number.isInteger(parseInt(limit))) {
         response.statusCode = 400;
         response.json({ "message": "bad input" });
         return;
       } else {
-        response.send(meals.slice(0, limit))
+        tempMeals.slice(0, limit)
       }
-    } else {
-      response.send(meals);
-    }
+    } 
+    response.send(tempMeals);
   } catch (error) {
     throw error
   }
@@ -47,14 +50,12 @@ router.get("/", async (request, response) => {
 router.get("/:id", async (request, response) => {
   try {
     const id = request.params.id
-    if (id > meals.length) {
-      response.send("please enter a valid ID")
-    } else if (!Number.isInteger(parseInt(id))) {
+    if (!Number.isInteger(parseInt(id))) {
       response.statusCode = 400;
       response.json({ "message": "bad input" });
       return;
     } else {
-      response.send(meals.find(meal => meal.id == id))
+      response.send(meals.find(meal => meal.id === id))
     }
   } catch (error) {
     throw error;
