@@ -7,13 +7,13 @@ router.get("/", async (request, response) => {
   const minRating = request.query.minRating
   const beginYear = request.query.beginYear
   const endYear = request.query.endYear
-  if (!minRating && beginYear) {
+  if (!minRating && beginYear && endYear) {
     response.send(movies.filter(movie => {
       if ((movie.year >= beginYear) && (movie.year <= endYear)) {
         return movie
       }
     }))
-  } else if (request.query.minRating) {
+  } else if (minRating && beginYear && endYear) {
     response.send(movies.filter(movie => {
       if ((movie.year >= beginYear) && (movie.year <= endYear) && (movie.rating >= minRating)) {
         return movie
