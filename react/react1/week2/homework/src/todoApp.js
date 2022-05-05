@@ -5,29 +5,26 @@ import './todoApp.css';
 
 export function TodoItem(props) {
     const [done, setDone] = useState(props.done)
-    const [deletedState, setDeletedState] = useState(false)
     const handleChange = () => {
         setDone(prevdone => {
             return !prevdone
         })
     }
     
-    if (deletedState) {
-        if (todoList.length === 0) {
-            return "No items..."
-        }
-    }
-    else return (
+    
+    return (
         <li className="todoApp">
             <h3>
                 *
                 <span style={done ? { textDecorationLine: 'line-through' } : {}}>
-                    {deletedState ? "" : props.description}
+                    {props.description}
                 </span>
                 <input type="checkbox" checked={done} onChange={handleChange}></input>
+               
                 <button onClick={() => {
-                    todoList.filter(item => item.id !== props.id)
-                    setDeletedState(true)
+                    props.setTodoState((prevItem) => {
+                        return prevItem.filter(item => item.id !== props.id)
+                    })
                 }}>
                     Delete
                 </button>
@@ -46,18 +43,22 @@ export function ToDo() {
             return [...prevTodos, newTodo]
         })
     }
+
     return (
         <div>
             <button onClick={addTodo}>Add Todo</button>
             <ListTitle />
-            <ul>
-                {todoState.map(todo => {
-                    return <TodoItem
-                        description={todo.description}
-                        done={todo.done}
-                        key={todo.id} />
-                })}
-            </ul>
+            {todoState.length === 0 ? "No items..." : (
+                <ul>
+                    {todoState.map(todo => {
+                        return <TodoItem
+                            description={todo.description}
+                            done={todo.done}
+                            key={todo.id}
+                            id={todo.id}
+                            setTodoState={setTodoState} />
+                    })}
+                </ul>)}
         </div>
     ) 
   }
