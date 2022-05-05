@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import todoList from "./todo"
 import { ListTitle } from "./todoListTitle"
+import { TimeSpent } from "./TimeSpent"
 import './todoApp.css';
 
 export function TodoItem(props) {
@@ -10,7 +11,6 @@ export function TodoItem(props) {
             return !prevdone
         })
     }
-    
     
     return (
         <li className="todoApp">
@@ -46,8 +46,9 @@ export function ToDo() {
 
     return (
         <div>
-            <button onClick={addTodo}>Add Todo</button>
             <ListTitle />
+            <TimeSpent />
+            <button onClick={addTodo}>Add Todo</button>
             {todoState.length === 0 ? "No items..." : (
                 <ul>
                     {todoState.map(todo => {
