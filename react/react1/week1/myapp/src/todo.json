@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "title": "Get out of bed",
+        "weekday": "Wed",
+        "month": "Sep",
+        "day": "13",
+        "year": "2017"
+    },
+    {
+        "id": "2",
+        "title": "Brush teeth",
+        "weekday": "Thu",
+        "month": "Sep",
+        "day": "14",
+        "year": "2017"
+    },
+    {
+        "id": "3",
+        "title": "Eat breakfast",
+        "weekday": "Fri",
+        "month": "Sep",
+        "day": "15",
+        "year": "2017"
+    }
+]
