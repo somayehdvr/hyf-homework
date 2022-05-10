@@ -1,39 +1,13 @@
 import React, {useState} from "react";
 import todoList from "./todo"
-import { ListTitle } from "./todoListTitle"
-import { TimeSpent } from "./TimeSpent"
+import TodoListTitle from "./TodoListTitle"
+import TimeSpent from "./TimeSpent"
+import TodoItem from "./TodoItem" 
 import './todoApp.css';
 
-export function TodoItem(props) {
-    const [done, setDone] = useState(props.done)
-    const handleChange = () => {
-        setDone(prevdone => {
-            return !prevdone
-        })
-    }
-    
-    return (
-        <li className="todoApp">
-            <h3>
-                *
-                <span style={done ? { textDecorationLine: 'line-through' } : {}}>
-                    {props.description}
-                </span>
-                <input type="checkbox" checked={done} onChange={handleChange}></input>
-               
-                <button onClick={() => {
-                    props.setTodoState((prevItem) => {
-                        return prevItem.filter(item => item.id !== props.id)
-                    })
-                }}>
-                    Delete
-                </button>
-            </h3>
-        </li>
-    )
-}
 
-export function ToDo() {
+
+export default function TodoApp() {
     const [todoState, setTodoState] = useState(todoList)
 
     const addTodo = () => {
@@ -46,7 +20,7 @@ export function ToDo() {
 
     return (
         <div>
-            <ListTitle />
+            <TodoListTitle />
             <TimeSpent />
             <button onClick={addTodo}>Add Todo</button>
             {todoState.length === 0 ? "No items..." : (

@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 
-export function TimeSpent() {
+export default function TimeSpent() {
     let [timer, setTimer] = useState(0)
     useEffect(() => {
         setTimeout(() => { setTimer(prevTimer=>prevTimer+1) }, 1000)
