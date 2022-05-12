@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import './App.css';
 import TodoListTitle from "./TodoListTitle"
-// import TimeSpent from "./TimeSpent"
+import TimeSpent from "./TimeSpent"
 import TodoItem from "./TodoItem" 
 import BorderComponent from './BorderComponent';
 
@@ -39,7 +39,7 @@ function App() {
     <div className="App">
       <BorderComponent color="blue">
       <TodoListTitle />
-      {/* <TimeSpent /> */}
+      <TimeSpent />
       Todo description
       <input type={"text"} value={descriptionState} onChange={descriptionEventHandler}></input> <br />
       deadline
