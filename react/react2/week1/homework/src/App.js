@@ -1,7 +1,10 @@
 import './App.css';
-import React, {useCallback, useEffect, useState} from 'react';
+import React, { useCallback, useEffect, useState, createContext } from 'react';
+import H1Title from './H1Title'
 
-function App() {
+export const AppContext = createContext(null)
+
+export default function App() {
   const [loading, setLoading] = useState(true)
   const [data, setData] = useState("")
   const [user, setUser] = useState("SomayehDvr")
@@ -23,28 +26,31 @@ function App() {
   useEffect(() => {
     fetchAPI()
   }, [fetchAPI])
+  const title = "Github user searcher"
+  const AppValues = [title]
   return (
     <div className="App">
-      <h1> Github user searcher </h1>
+      {/* All state should be managed using the context api! */}
+      <AppContext.Provider value={AppValues}>
+      <H1Title /> 
       {/* When the search is loading, show "loading..." */}
-      {loading ? "Loading" : 
+      {loading ? "loading..." : 
         <>
-          <input value={user} onChange={inputHandler} placeholder="Search for user" />
+          <input value={user} onChange={inputHandler} placeholder="Search for user" /><br />
           {/* When the search result is empty (no users), you should show "No results..." */}
           {data.total_count === 0 ? "No results..." :
             <>
               {data.items.map(item => {
-                return item.login + item.url
+                return <><a target="_blank" rel="noreferrer" href={item.url}>{item.login}</a><br /></>
               })}
             </>
           }
         </>
       }
       
-     
-      {/* All state should be managed using the context api! */}
+    
+      </AppContext.Provider>
     </div>
   );
 }
 
-export default App;
