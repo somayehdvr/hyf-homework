@@ -1,5 +1,10 @@
 Beets
 Broadbeans
-Carrot
+Lettuce
+Eggplant
+Jicama
+Leeks
+Onions
+Potato
 Eggplant
 Jicama
