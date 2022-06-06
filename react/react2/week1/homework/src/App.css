@@ -1,3 +1,7 @@
 .App {
   text-align: center;
 }
+.borderComponent{
+  border: 'blue 1px solid';
+  margin: '1px'
+}

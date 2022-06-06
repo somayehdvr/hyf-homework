@@ -1,8 +1,4 @@
-import { useContext } from "react"
-import {AppContext} from "./App"
-
-export default function H1Title() {
-    const title = useContext(AppContext)
+export default function H1Title({title}) {
     return (
         <h1>
             {title}
