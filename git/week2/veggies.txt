@@ -1,5 +1,7 @@
 Beets
 Broadbeans
-Lettuce
+Potato
 Eggplant
 Jicama
+Leeks
+Onions
