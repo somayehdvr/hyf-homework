@@ -3,8 +3,7 @@
   list-style-type: none;
 }
 
-.borderComponent-blue {
-  border: blue 3px solid;
+.borderComponent {
   margin: 5px;
 }
 

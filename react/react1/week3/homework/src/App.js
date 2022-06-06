@@ -41,9 +41,9 @@ function App() {
       <TodoListTitle />
       <TimeSpent />
       Todo description
-      <input type={"text"} value={descriptionState} onChange={descriptionEventHandler}></input> <br />
+      <input type={"text"} value={descriptionState} onChange={descriptionEventHandler} /> <br />
       deadline
-      <input type={"date"} value={deadlineState} onChange={deadlineEventHandler} ></input> <br />
+      <input type={"date"} value={deadlineState} onChange={deadlineEventHandler} /> <br />
         <button onClick={addTodo}>Add Todo</button>
         {todo.length === 0 ? "No items..." : (
             <ul>

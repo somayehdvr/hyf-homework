@@ -5,11 +5,18 @@ const app = express();
 const moviesRouter = require("./api/movies-router");
 
 // This is where you want to create your is chrome browser middleware (second exercise)
-
+app.use((request, response, next)=> {
+    const middleware = request.headers["user-agent"].includes("Chrome")
+    if (middleware) {
+        request.isChromeBrowser = "true"
+    } else {
+        request.isChromeBrowser ="false"
+    }
+    next()
+})
 
 // app.use binds middleware to your application. You can give app.use a path and router. The mini router will take care of all requests with the path
 app.use("/api/movies", moviesRouter);
-
 
 // For testing purposes only!! Used to check if the middleware function is implemented correctly
 app.get("/middleware-test", async (request, response) => {

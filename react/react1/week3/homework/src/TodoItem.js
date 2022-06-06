@@ -40,14 +40,14 @@ export default function TodoItem(props) {
                 <h3>
                     *
                     {editing ? (
-                        <input type={"text"} value={descriptionState} onChange={descriptionEventHandler}></input>
+                        <input type={"text"} value={descriptionState} onChange={descriptionEventHandler} />
                     ) : (
                         <span style={done ? { textDecorationLine: 'line-through' } : {}}>
                             {props.description} | 
                             { props.deadline }
                         </span>
                     )}
-                    <input type="checkbox" checked={done} onChange={handleChange}></input>
+                    <input type="checkbox" checked={done} onChange={handleChange} />
                 
                     <button onClick={deleteTodo}> Delete </button>
                     {editing ? (
