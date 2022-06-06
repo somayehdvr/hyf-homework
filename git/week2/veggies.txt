@@ -5,3 +5,6 @@ Eggplant
 Jicama
 Leeks
 Onions
+Potato
+Eggplant
+Jicama
